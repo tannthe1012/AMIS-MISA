@@ -1,0 +1,100 @@
+﻿
+@font-face {
+    font-family: 'notosans-regular';
+    src: url('../../assets/fonts/notosans-regular.2cb88a13.woff2') format('opentype');
+}
+
+@font-face {
+    font-family: 'notosans-semibold';
+    src: url('../../assets/fonts/notosans-semibold.df3e6dc4.woff2') format('opentype');
+}
+
+.header {
+    width: 100%;
+    height: 48px;
+    display: flex;
+    justify-content: space-between;
+}
+.header-right {
+    margin-right: 30px;
+}
+.header-right .btn-user {
+    height: 100%;
+    display: flex;
+    line-height: 48px;
+    align-items: center;
+    margin: 0 16px;
+    margin-right: 0px;
+}
+.header-icon {
+    background: url(../../assets/imgs/Sprites.64af8f61.svg) no-repeat -843px -30px;
+}
+
+    .header .header-dropdown {
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+        .header .header-dropdown .header-dropdown-content {
+            padding-left: 10px;
+            padding-top: 1px;
+            font-size: 14px;
+            margin-right: 10px;
+            font-family: notosans-semibold;
+            overflow: hidden;
+            font-weight: 600;  
+            color: #111;
+            cursor: pointer;
+            
+        }
+
+        .header .header-dropdown .header-icon-dropdown {
+            background: url(../../assets/imgs/Sprites.64af8f61.svg) no-repeat -80px -360px;
+            transform: rotate(90deg);
+        }
+
+
+    .header .header-right, .header-left {
+        height: 100%;
+        display: flex;
+        line-height: 48px;
+        align-items: center;
+    }
+    .header-left .header-icon {
+        margin: 0 10px;
+    }
+    .header-right-content {
+        padding-top: 1px;
+        font-size: 14px;
+        font-family: notosans-semibold;
+        font-weight: 600;
+        color: #111;
+        cursor: pointer;
+        margin-right: 8px;
+    }
+
+    .header .header-dropdown img {
+        width: 18px;
+        height: 18px;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .header .header-right .header-right-icon {
+        background: url(../../assets/imgs/Sprites.64af8f61.svg) no-repeat -1076px -32px;
+    }
+
+    .header .header-right .header-right-avatar {
+        border-radius: 50%;
+        background-image: url('../../assets/imgs/Sprites.64af8f61.svg');
+        background-repeat: no-repeat;
+        background-position: -352px -894px;
+        margin-right: 6px;
+    }
+    .icon-bell {
+        margin-right: 10px;
+        background: url(../../assets/imgs/Sprites.64af8f61.svg) no-repeat -788px -30px;
+    }
+
+    

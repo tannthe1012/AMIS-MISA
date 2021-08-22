@@ -1,0 +1,43 @@
+﻿body {
+    margin: 0;
+    font-family: notosans-regular;
+    font-size: 13px;
+    overflow-x: hidden;
+    max-height: 100vh;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'notosans-regular';
+    src: url('../../assets/fonts/notosans-regular.2cb88a13.woff2') format('opentype');
+}
+@font-face {
+    font-family: 'notosans-bold';
+    src: url('../../assets/fonts/notosans-bold.3ede5aff.woff2') format('opentype');
+}
+@font-face {
+    font-family: 'notosans-semibold';
+    src: url('../../assets/fonts/notosans-semibold.df3e6dc4.woff2') format('opentype');
+}
+@font-face {
+    font-family: 'notosans-italic';
+    src: url('../../assets/fonts/notosans-italic.1c1aaac9.woff2') format('opentype');
+}
+
+
+
+
+@import '../common/colab.css';
+@import '../common/combobox.css';
+@import '../common/common.css';
+@import '../common/content.css';
+@import '../common/contextmenu.css';
+@import '../common/dropdown.css';
+@import '../common/form.css';
+@import '../common/popup.css';
+@import '../common/toast.css';
+@import '../common/filterbar.css';
+@import '../common/grid.css';
+@import '../common/navbar.css';
+@import '../common/button.css';
+@import '../../assets/font/fontawesome-5.15.1/css/all.min.css';

@@ -1,0 +1,75 @@
+.text-align-right {
+    text-align: right;
+}
+.text-align-center {
+    text-align: center;
+}
+.mi-icon-24 {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    min-height: 24px;
+    max-height: 24px;
+    max-width: 24px;
+}
+.mi-icon-14 {
+    width: 14px;
+    height: 14px;
+    min-width: 14px;
+    min-height: 14px;
+}
+.mi-icon-32 {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
+}
+.mi-icon-16 {
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+    min-height: 16px;
+}
+.mi-icon-48 {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    min-height: 48px;
+}
+
+label {
+    margin-bottom: 0;
+}
+
+.flex {
+    display: flex!important;
+}
+.pd-b-12 {
+    padding-bottom: 12px;
+}
+.w-1\/2 {
+    width: 50%!important;
+}
+.p-r-26 {
+    padding-right: 26px;
+}
+.w-2\/5 {
+    width: 40%!important;
+}
+.w-3\/5 {
+    width: 60%!important;
+}
+.p-r-6 {
+    padding-right: 6px;
+}
+.w-1\/4 {
+    width: 25%!important;
+}
+.p-l-10 {
+    padding-left: 10px;
+}
+.align-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

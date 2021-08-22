@@ -1,0 +1,86 @@
+﻿.navbar {
+    position: sticky;
+    width: 178px;
+    height: 100vh;
+    z-index: 20;
+    background-color: #393a3d;
+}
+.navbar .content {
+    width: 100%;
+}
+
+.navbar .navbar-content {
+    width: 100%;
+}
+.navbar .navbar-content .nav-item .nav-item-content {
+    color: #fff;
+}
+.navbar .navbar-content .nav-item {
+    display: flex;
+    padding-left: 8px;
+    height: 42px;
+    line-height: 42px;
+    text-decoration: none;
+    border-left: 6px solid;
+    border-color: #393a3d;
+}
+
+.navbar .navbar-content .nav-item:hover {
+    background-color: #5d5d61;
+    color: #fff;
+    cursor: pointer;
+}
+
+.navbar .navbar-content .nav-item .nav-item-icon {
+    min-width: 24px;
+    min-height: 24px;
+    background-repeat: no-repeat;
+    margin: auto 0;
+    margin-right: 8px;
+}
+.nav-item-content {
+    color: #000000;
+}
+
+.menu-active {
+    background-color: #5d5d61 !important;
+    border-color: #2ca01c !important;
+    font-family: notosans-bold;
+}
+
+.content-active {
+    color: #ffffff;
+}
+
+.icon-menu-active {
+    filter: brightness(0) invert(1);
+}
+
+.logo-site {
+    padding-left: 24px;
+    box-sizing: border-box;
+    min-width: 178px;
+    height: 48px;
+    display: flex;
+    border: none;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.toggle-icon {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    min-height: 24px;
+    margin-right: 10px;
+    background: url(../../assets/imgs/Sprites.64af8f61.svg) no-repeat -424px -86px;
+    color: #ffffff;
+    
+}
+.amis-logo {
+    width: 96px;
+    height: 32px;
+    background-image: url('../../assets/imgs/Logo_Module_TiengViet_White.66947422.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}

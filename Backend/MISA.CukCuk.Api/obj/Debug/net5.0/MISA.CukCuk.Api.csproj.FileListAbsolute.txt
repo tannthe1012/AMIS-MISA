@@ -1,0 +1,78 @@
+C:\CTY-MISA\MISA-backend\CukCuk\MISA.CukCuk\MISA.CukCuk.Api\bin\Debug\net5.0\appsettings.Development.json
+C:\CTY-MISA\MISA-backend\CukCuk\MISA.CukCuk\MISA.CukCuk.Api\bin\Debug\net5.0\appsettings.json
+C:\CTY-MISA\MISA-backend\CukCuk\MISA.CukCuk\MISA.CukCuk.Api\bin\Debug\net5.0\MISA.CukCuk.Api.exe
+C:\CTY-MISA\MISA-backend\CukCuk\MISA.CukCuk\MISA.CukCuk.Api\bin\Debug\net5.0\MISA.CukCuk.Api.deps.json
+C:\CTY-MISA\MISA-backend\CukCuk\MISA.CukCuk\MISA.CukCuk.Api\bin\Debug\net5.0\MISA.CukCuk.Api.runtimeconfig.json
+C:\CTY-MISA\MISA-backend\CukCuk\MISA.CukCuk\MISA.CukCuk.Api\bin\Debug\net5.0\MISA.CukCuk.Api.runtimeconfig.dev.json
+C:\CTY-MISA\MISA-backend\CukCuk\MISA.CukCuk\MISA.CukCuk.Api\bin\Debug\net5.0\MISA.CukCuk.Api.dll
+C:\CTY-MISA\MISA-backend\CukCuk\MISA.CukCuk\MISA.CukCuk.Api\bin\Debug\net5.0\ref\MISA.CukCuk.Api.dll
+C:\CTY-MISA\MISA-backend\CukCuk\MISA.CukCuk\MISA.CukCuk.Api\bin\Debug\net5.0\MISA.CukCuk.Api.pdb
+C:\CTY-MISA\MISA-backend\CukCuk\MISA.CukCuk\MISA.CukCuk.Api\bin\Debug\net5.0\Microsoft.OpenApi.dll
+C:\CTY-MISA\MISA-backend\CukCuk\MISA.CukCuk\MISA.CukCuk.Api\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\CTY-MISA\MISA-backend\CukCuk\MISA.CukCuk\MISA.CukCuk.Api\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\CTY-MISA\MISA-backend\CukCuk\MISA.CukCuk\MISA.CukCuk.Api\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\CTY-MISA\MISA-backend\CukCuk\MISA.CukCuk\MISA.CukCuk.Api\obj\Debug\net5.0\MISA.CukCuk.Api.csproj.AssemblyReference.cache
+C:\CTY-MISA\MISA-backend\CukCuk\MISA.CukCuk\MISA.CukCuk.Api\obj\Debug\net5.0\MISA.CukCuk.Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\CTY-MISA\MISA-backend\CukCuk\MISA.CukCuk\MISA.CukCuk.Api\obj\Debug\net5.0\MISA.CukCuk.Api.AssemblyInfoInputs.cache
+C:\CTY-MISA\MISA-backend\CukCuk\MISA.CukCuk\MISA.CukCuk.Api\obj\Debug\net5.0\MISA.CukCuk.Api.AssemblyInfo.cs
+C:\CTY-MISA\MISA-backend\CukCuk\MISA.CukCuk\MISA.CukCuk.Api\obj\Debug\net5.0\MISA.CukCuk.Api.csproj.CoreCompileInputs.cache
+C:\CTY-MISA\MISA-backend\CukCuk\MISA.CukCuk\MISA.CukCuk.Api\obj\Debug\net5.0\MISA.CukCuk.Api.MvcApplicationPartsAssemblyInfo.cs
+C:\CTY-MISA\MISA-backend\CukCuk\MISA.CukCuk\MISA.CukCuk.Api\obj\Debug\net5.0\MISA.CukCuk.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\CTY-MISA\MISA-backend\CukCuk\MISA.CukCuk\MISA.CukCuk.Api\obj\Debug\net5.0\staticwebassets\MISA.CukCuk.Api.StaticWebAssets.Manifest.cache
+C:\CTY-MISA\MISA-backend\CukCuk\MISA.CukCuk\MISA.CukCuk.Api\obj\Debug\net5.0\staticwebassets\MISA.CukCuk.Api.StaticWebAssets.xml
+C:\CTY-MISA\MISA-backend\CukCuk\MISA.CukCuk\MISA.CukCuk.Api\obj\Debug\net5.0\scopedcss\bundle\MISA.CukCuk.Api.styles.css
+C:\CTY-MISA\MISA-backend\CukCuk\MISA.CukCuk\MISA.CukCuk.Api\obj\Debug\net5.0\MISA.CukCuk.Api.RazorTargetAssemblyInfo.cache
+C:\CTY-MISA\MISA-backend\CukCuk\MISA.CukCuk\MISA.CukCuk.Api\obj\Debug\net5.0\MISA.CukCuk.Api.csproj.CopyComplete
+C:\CTY-MISA\MISA-backend\CukCuk\MISA.CukCuk\MISA.CukCuk.Api\obj\Debug\net5.0\MISA.CukCuk.Api.dll
+C:\CTY-MISA\MISA-backend\CukCuk\MISA.CukCuk\MISA.CukCuk.Api\obj\Debug\net5.0\ref\MISA.CukCuk.Api.dll
+C:\CTY-MISA\MISA-backend\CukCuk\MISA.CukCuk\MISA.CukCuk.Api\obj\Debug\net5.0\MISA.CukCuk.Api.pdb
+C:\CTY-MISA\MISA-backend\CukCuk\MISA.CukCuk\MISA.CukCuk.Api\obj\Debug\net5.0\MISA.CukCuk.Api.genruntimeconfig.cache
+C:\CTY-MISA\MISA-backend\CukCuk\MISA.CukCuk\MISA.CukCuk.Api\bin\Debug\net5.0\Dapper.dll
+C:\CTY-MISA\MISA-backend\CukCuk\MISA.CukCuk\MISA.CukCuk.Api\bin\Debug\net5.0\MySqlConnector.dll
+C:\CTY-MISA\MISA-backend\CukCuk\MISA.CukCuk\MISA.CukCuk.Api\bin\Debug\net5.0\MISA.ApplicationCore.dll
+C:\CTY-MISA\MISA-backend\CukCuk\MISA.CukCuk\MISA.CukCuk.Api\bin\Debug\net5.0\MISA.ApplicationCore.pdb
+C:\CTY-MISA\MISA-backend\CukCuk\MISA.CukCuk\MISA.CukCuk.Api\bin\Debug\net5.0\MISA.Reponsitory.dll
+C:\CTY-MISA\MISA-backend\CukCuk\MISA.CukCuk\MISA.CukCuk.Api\bin\Debug\net5.0\MISA.Reponsitory.pdb
+C:\CTY-MISA\MISA-backend\CukCuk\MISA.CukCuk\MISA.CukCuk.Api\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\CTY-MISA\MISA-backend\CukCuk\MISA.CukCuk\MISA.CukCuk.Api\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\CTY-MISA\MISA-backend\CukCuk\MISA.CukCuk\MISA.CukCuk.Api\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\CTY-MISA\MISA-backend\CukCuk\MISA.CukCuk\MISA.CukCuk.Api\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+C:\CTY-MISA\PJ GĐ1\Backend\MISA.CukCuk.Api\obj\Debug\net5.0\MISA.CukCuk.Api.csproj.AssemblyReference.cache
+C:\CTY-MISA\PJ GĐ1\Backend\MISA.CukCuk.Api\obj\Debug\net5.0\MISA.CukCuk.Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\CTY-MISA\PJ GĐ1\Backend\MISA.CukCuk.Api\obj\Debug\net5.0\MISA.CukCuk.Api.AssemblyInfoInputs.cache
+C:\CTY-MISA\PJ GĐ1\Backend\MISA.CukCuk.Api\obj\Debug\net5.0\MISA.CukCuk.Api.AssemblyInfo.cs
+C:\CTY-MISA\PJ GĐ1\Backend\MISA.CukCuk.Api\obj\Debug\net5.0\MISA.CukCuk.Api.csproj.CoreCompileInputs.cache
+C:\CTY-MISA\PJ GĐ1\Backend\MISA.CukCuk.Api\obj\Debug\net5.0\MISA.CukCuk.Api.MvcApplicationPartsAssemblyInfo.cs
+C:\CTY-MISA\PJ GĐ1\Backend\MISA.CukCuk.Api\obj\Debug\net5.0\MISA.CukCuk.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\CTY-MISA\PJ GĐ1\Backend\MISA.CukCuk.Api\obj\Debug\net5.0\MISA.CukCuk.Api.dll
+C:\CTY-MISA\PJ GĐ1\Backend\MISA.CukCuk.Api\obj\Debug\net5.0\ref\MISA.CukCuk.Api.dll
+C:\CTY-MISA\PJ GĐ1\Backend\MISA.CukCuk.Api\obj\Debug\net5.0\MISA.CukCuk.Api.pdb
+C:\CTY-MISA\PJ GĐ1\Backend\MISA.CukCuk.Api\bin\Debug\net5.0\appsettings.Development.json
+C:\CTY-MISA\PJ GĐ1\Backend\MISA.CukCuk.Api\bin\Debug\net5.0\appsettings.json
+C:\CTY-MISA\PJ GĐ1\Backend\MISA.CukCuk.Api\bin\Debug\net5.0\MISA.CukCuk.Api.exe
+C:\CTY-MISA\PJ GĐ1\Backend\MISA.CukCuk.Api\bin\Debug\net5.0\MISA.CukCuk.Api.deps.json
+C:\CTY-MISA\PJ GĐ1\Backend\MISA.CukCuk.Api\bin\Debug\net5.0\MISA.CukCuk.Api.runtimeconfig.json
+C:\CTY-MISA\PJ GĐ1\Backend\MISA.CukCuk.Api\bin\Debug\net5.0\MISA.CukCuk.Api.runtimeconfig.dev.json
+C:\CTY-MISA\PJ GĐ1\Backend\MISA.CukCuk.Api\bin\Debug\net5.0\MISA.CukCuk.Api.dll
+C:\CTY-MISA\PJ GĐ1\Backend\MISA.CukCuk.Api\bin\Debug\net5.0\ref\MISA.CukCuk.Api.dll
+C:\CTY-MISA\PJ GĐ1\Backend\MISA.CukCuk.Api\bin\Debug\net5.0\MISA.CukCuk.Api.pdb
+C:\CTY-MISA\PJ GĐ1\Backend\MISA.CukCuk.Api\bin\Debug\net5.0\Dapper.dll
+C:\CTY-MISA\PJ GĐ1\Backend\MISA.CukCuk.Api\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\CTY-MISA\PJ GĐ1\Backend\MISA.CukCuk.Api\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\CTY-MISA\PJ GĐ1\Backend\MISA.CukCuk.Api\bin\Debug\net5.0\Microsoft.OpenApi.dll
+C:\CTY-MISA\PJ GĐ1\Backend\MISA.CukCuk.Api\bin\Debug\net5.0\MySqlConnector.dll
+C:\CTY-MISA\PJ GĐ1\Backend\MISA.CukCuk.Api\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\CTY-MISA\PJ GĐ1\Backend\MISA.CukCuk.Api\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+C:\CTY-MISA\PJ GĐ1\Backend\MISA.CukCuk.Api\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\CTY-MISA\PJ GĐ1\Backend\MISA.CukCuk.Api\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\CTY-MISA\PJ GĐ1\Backend\MISA.CukCuk.Api\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\CTY-MISA\PJ GĐ1\Backend\MISA.CukCuk.Api\bin\Debug\net5.0\MISA.ApplicationCore.dll
+C:\CTY-MISA\PJ GĐ1\Backend\MISA.CukCuk.Api\bin\Debug\net5.0\MISA.Reponsitory.dll
+C:\CTY-MISA\PJ GĐ1\Backend\MISA.CukCuk.Api\bin\Debug\net5.0\MISA.ApplicationCore.pdb
+C:\CTY-MISA\PJ GĐ1\Backend\MISA.CukCuk.Api\bin\Debug\net5.0\MISA.Reponsitory.pdb
+C:\CTY-MISA\PJ GĐ1\Backend\MISA.CukCuk.Api\obj\Debug\net5.0\staticwebassets\MISA.CukCuk.Api.StaticWebAssets.Manifest.cache
+C:\CTY-MISA\PJ GĐ1\Backend\MISA.CukCuk.Api\obj\Debug\net5.0\staticwebassets\MISA.CukCuk.Api.StaticWebAssets.xml
+C:\CTY-MISA\PJ GĐ1\Backend\MISA.CukCuk.Api\obj\Debug\net5.0\scopedcss\bundle\MISA.CukCuk.Api.styles.css
+C:\CTY-MISA\PJ GĐ1\Backend\MISA.CukCuk.Api\obj\Debug\net5.0\MISA.CukCuk.Api.RazorTargetAssemblyInfo.cache
+C:\CTY-MISA\PJ GĐ1\Backend\MISA.CukCuk.Api\obj\Debug\net5.0\MISA.CukCuk.Api.csproj.CopyComplete
+C:\CTY-MISA\PJ GĐ1\Backend\MISA.CukCuk.Api\obj\Debug\net5.0\MISA.CukCuk.Api.genruntimeconfig.cache

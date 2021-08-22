@@ -1,0 +1,97 @@
+@font-face {
+    font-family: 'notosans-regular';
+    src: url('../../assets/fonts/notosans-regular.2cb88a13.woff2') format('opentype');
+}
+
+.cbx {
+    position: relative;
+    height: 32px;
+    width: calc(100%);
+    margin-bottom: 12px;
+}
+
+.cbx-show {
+    height: 30px;
+    background-color: #ffffff;
+    display: flex;
+    border: 1px solid #babec5;
+    border-radius: 2px;
+}
+
+.cbx-show input {
+    max-height: 30px;
+    flex: 1;
+    min-width: 50px;
+    padding: 0 0 0 10px!important;
+    border: none;
+    font-family: notosans-regular;
+    margin-top: 0px !important;
+}
+
+.cbx-show input:focus-visible {
+    outline: none;
+}
+
+.cbx-select {
+    height: 32px;
+    line-height: 32px;
+    background-color: #fff;
+    padding: 0px 14px 0px 10px;
+    color: #111111;
+    padding-right: none;
+    font-size: 13px;
+}
+
+
+.cbx-select:hover {
+    background-color: #ebedf0;
+    color: #2ca01c;
+}
+
+.cbx-hide {
+    position: absolute;
+    top: 34px;
+    width: calc(100% - 2px);
+    z-index: 5;
+    border: 1px solid #babec5;
+    box-shadow: 0 -8px 34px 0 rgb(0 0 0 / 5%);
+    overflow: hidden;
+}
+
+.cbx {
+    user-select: none;
+}
+
+.cbx .active {
+    background-color: #2ca01c;
+    color: #fff;
+}
+
+.cbx-icon-active {
+    transform: rotate(180deg);
+}
+
+.cbx-selector-active {
+    border-color: #019160;
+}
+
+.cbx-select-focus {
+    background-color: #E9EBEE;
+}
+
+.border-focus {
+    border-color: #01B075;
+}
+
+.border-red-combobox {
+    border-color: red;
+}
+.active-icon {
+    opacity: 1 !important;
+}
+.cbx-show:focus-within {
+    border-color: #2ca01c !important;
+}
+.error-combobox {
+    border-color: red !important;
+}

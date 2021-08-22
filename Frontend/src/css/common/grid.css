@@ -1,0 +1,157 @@
+.grid {
+    max-width: calc(100vw - 218px);
+    /* position: relative; */
+}
+
+
+table td {
+    max-height: 36px;
+    padding: 5px 10px;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: #ffffff;
+    border-bottom: 1px solid #c7c7c7;
+    border-right: 1px dotted #c7c7c7;
+}
+
+table {
+    empty-cells: show;
+    empty-cells: inherit;
+    empty-cells: initial;
+    empty-cells: unset;
+} 
+ table tbody tr {
+    background-color: #fff ;
+}
+
+table tr:hover td{
+    background-color: #f3f8f8;
+}
+th {
+    text-align: left;
+    height: 33px;
+    position: sticky;
+    top: 0;
+    background: #eceef1;
+    z-index: 29;
+    padding: 0 10px;
+    font-size: 12px;
+    border-right: 1px solid #c7c7c7;
+    border-bottom: 1px solid #c7c7c7;
+    cursor: pointer;
+    user-select: none;
+}
+
+.white-space {
+    white-space: nowrap;
+}
+
+.sticky {
+    position: sticky;
+    right: 30px;
+    z-index: 3;
+}
+table label .ms-checkbox{
+    justify-content: flex-start;
+    margin-bottom: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: center!important;
+}
+.ms-checkbox-input {
+    position: absolute;
+    /* width: 10%;
+    height: 100%; */
+    opacity: 0;
+    z-index: 200;
+    cursor: pointer;
+    margin-bottom: 0px;
+}
+.ms-border-checkbox {
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    position: relative;
+    width: 18px;
+    height: 18px;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border: 1px solid #afafaf;
+    background: #fff;
+}
+.ms-checkbox-inner {
+    width: inherit;
+    height: inherit;
+}
+.icon-checkbox-active {
+    background: url(../../assets/imgs/Sprites.64af8f61.svg) no-repeat -1224px -360px;
+}
+.border-active {
+    border: 1px solid #2ca01c;
+}
+.ms-tr-viewer {
+    height: 36px;
+    padding: 5px 10px;
+    border-bottom: 1px solid #c7c7c7;
+    border-right: 1px dotted #c7c7c7;
+    white-space: pre-wrap;
+}
+.flex {
+    display: flex!important;
+}
+.justify-end {
+    justify-content: flex-end!important;
+}
+.ms-dropdown {
+    display: flex;
+}
+td button {
+    border: 0;
+    background: transparent;
+    background-image: initial;
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    /* background-repeat-x: initial;
+    background-repeat-y: initial; */
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: transparent;
+}
+@font-face {
+    font-family: 'notosans-semibold';
+    src: url('../../assets/fonts/notosans-semibold.df3e6dc4.woff2') format('opentype');
+}
+.ms-dropdown-text {
+    padding: 6px 0 6px 16px!important;
+    color: #0075c0;
+    border-radius: 3px 0 0 3px;
+    height: 36px;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 13px;
+    font-family: notosans-semibold;
+}
+.ms-btn-dropdown {
+    width: 46px;
+    border-radius: 0 3px 3px 0;
+    color: #0075c0;
+    height: 36px;
+    padding: 8px 10px 8px 10px;
+}
+.center {
+    height: 20px;
+    display: flex;
+    align-items: center;
+}
+.icon-dropdown {
+    background: url(../../assets/imgs/Sprites.64af8f61.svg) no-repeat -896px -359px;
+    cursor: pointer;
+}

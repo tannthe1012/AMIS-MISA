@@ -1,0 +1,44 @@
+.contextmenu {
+    position: fixed;
+    height: auto;
+    width: auto;
+    z-index: 9990;
+    transform: translate(-100%);
+    transition: opacity .25s,transform .25s,width .3s ease;
+    background-color: #fff;
+    border: 1px solid #babec5;
+    border-radius: 2px;
+    padding: 2px 1px;
+}
+
+@keyframes meuOpen {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@font-face {
+    font-family: 'notosans-regular';
+    src: url('../../assets/fonts/notosans-regular.2cb88a13.woff2') format('opentype');
+}
+.contextmenu-tooltip {
+    white-space: nowrap;
+    transition: all .2s ease;
+    position: relative;
+    z-index: 1000;
+    text-align: left;
+    list-style: none;
+    font-size: 13px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #111111;
+    font-family: notosans-regular;
+}
+.contextmenu-tooltip:hover {
+    background-color: #e8e9ec;
+    color: #08bf1e;
+}

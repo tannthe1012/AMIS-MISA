@@ -1,0 +1,69 @@
+﻿.content {
+    max-width: calc(100vw - 20px);
+    max-height: calc(100vh - 48px);
+    position: relative;
+    /* flex-direction: column; */
+    background-color: #f4f5f6;
+    transition: 0.5s ease;
+    /* overflow-x: hidden; */
+    padding-left: 20px;
+}
+@font-face {
+    font-family: 'notosans-bold';
+    src: url('../../assets/fonts/notosans-bold.3ede5aff.woff2') format('opentype');
+}
+.content .header-content {
+    width: calc(100% - 50px);
+    height: 36px;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    z-index: 30;
+    padding: 24px 10px 16px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f4f5f6 !important;
+}
+.content .header-content .title {
+    line-height: 36px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #111;
+    font-family: notosans-bold;
+}
+
+.content .content-menu {
+    max-width: 100%;
+    max-height: calc(100vh - 124px);
+    position: relative;
+    padding: 76px 20px 0px 0px;
+    background-color: #f4f5f6!important;
+    overflow: auto;
+}
+.content .content-menu .filter-bar {
+    background-color: #fff;
+    position: sticky;
+    left: 0px;
+    z-index: 28;
+}
+
+.content .paging-bar {
+    height: 56px;
+    background-color: #ffffff;
+    display: flex;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+ ::-webkit-scrollbar-thumb {
+    height: 350px;
+    background: #b8bcc3;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    margin-top: 0px;
+}
