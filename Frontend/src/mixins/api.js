@@ -1,5 +1,6 @@
 import axios from "axios";
 import { toast } from "../mixins/mixin.js";
+import {MESSAGE} from "../resource/index"
 export const api = {
     mixins: [toast],
     methods: {
@@ -10,7 +11,6 @@ export const api = {
         async getAllEmployee() {
             this.$store.state.isShowLoading = true;
             this.$store.state.employeeList = [];
-            // let pageNumber = (this.$store.state.Pagination.currentPage - 1) * 20;
             await axios
                 .get(`https://localhost:44332/api/v1/Employees/Filter?employeeFilter=${this.$store.state.Pagination.employeeFilter}&pageIndex=${this.$store.state.Pagination.currentPage}&pageSize=${this.$store.state.Pagination.pageSize}`)
                 .then((response) => {
@@ -24,18 +24,6 @@ export const api = {
                 });
             this.$store.state.isShowLoading = false;
         },
-        // async getAllEmployee() {
-        //     await axios
-        //         .get("https://localhost:44332/api/v1/Employees")
-        //         .then((response) => {
-        //             // console.log(response.data);
-        //             this.$store.state.employeeList= [];
-        //             this.$store.state.employeeList = response.data;
-        //         })
-        //         .catch(function (error) {
-        //             console.log(error);
-        //         });
-        // },
         /**
         * Hàm lấy dữ liệu của table
         * Created By:  NTTan (17/8/2021)
@@ -69,8 +57,6 @@ export const api = {
                 });
             return newCode;
         },
-
-
         /**
         * Hàm lấy dữ liệu của table
         * Created By:  NTTan (17/8/2021)
@@ -103,9 +89,10 @@ export const api = {
                     this.$store.state.employeeList = [];
                     this.getAllEmployee();
                     setTimeout(() => {
-                        this.addToast("success", "Bạn đã xóa bản ghi thành công");
+                        this.addToast(MESSAGE.SUCCESS_TOAST, MESSAGE.DELETE_SUCCESS);
                     }, 500);
                 }).catch(function (error) {
+                    this.addToast(MESSAGE.ERROR_TOAST, MESSAGE.DELETE_FAIL);
                     console.log(error);
                 })
         },
@@ -124,9 +111,10 @@ export const api = {
                     this.$store.state.employeeList = [];
                     this.getAllEmployee();
                     setTimeout(() => {
-                        this.addToast("success", "Bạn đã sửa dữ liệu thành công");
+                        this.addToast(MESSAGE.SUCCESS_TOAST, MESSAGE.UPDATE_SUCCESS);
                     }, 500);
                 }).catch(function (error) {
+                    this.addToast(MESSAGE.ERROR_TOAST, MESSAGE.UPDATE_FAIL);
                     console.log(error);
                 })
         },
@@ -141,10 +129,11 @@ export const api = {
                     this.$store.state.employeeList = [];
                     this.getAllEmployee();
                     setTimeout(() => {
-                        this.addToast("success", "Bạn đã thêm mới bản ghi thành công");
+                        this.addToast(MESSAGE.SUCCESS_TOAST, MESSAGE.INSERT_SUCCESS);
                     }, 500);
-                }).catch(function () {
-                    this.addToast("error", "Bạn đã thêm mới bản ghi thất bại");
+                }).catch(function (error) {
+                    this.addToast(MESSAGE.ERROR_TOAST, MESSAGE.INSERT_FAIL);
+                    console.log(error);
                 })
         },
 

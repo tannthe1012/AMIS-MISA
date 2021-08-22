@@ -18,5 +18,12 @@ export const MESSAGE = {
     ICON_POPUP_ERROR:"icon-error",
     PREFIX_EMPLOYEECODE:"MF",
     ERROR_VALUE_CBB:"Vui lòng chọn đúng các Option ở trên",
-
+    DELETE_SUCCESS:"Bạn đã xóa bản ghi thành công",
+    UPDATE_SUCCESS:"Bạn đã sửa dữ liệu thành công",
+    INSERT_SUCCESS:"Bạn đã thêm mới bản ghi thành công",
+    DELETE_FAIL:"Bạn đã xóa bản ghi thành công",
+    UPDATE_FAIL:"Bạn đã sửa dữ liệu thành công",
+    INSERT_FAIL:"Bạn đã thêm mới bản ghi thành công",
+    SUCCESS_TOAST:"success",
+    ERROR_TOAST:"error",
 }
