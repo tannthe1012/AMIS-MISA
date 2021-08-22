@@ -64,11 +64,12 @@ import EmployeeDetail from "./EmployeeDetail.vue";
 import BasePopup from "../../../components/base/BasePopup.vue";
 import BaseToast from "../../../components/base/BaseToast.vue";
 import BaseLoading from "../../../components/base/BaseLoading.vue";
+import {MESSAGE} from "../../../resource/index"
 import { toast } from "../../../mixins/mixin.js";
-import { api } from "../../../mixins/api";
+import { api } from "../../../mixins/api.js";
 export default {
   name: "EmployeePage",
-  mixins: [toast, api],
+  mixins: [toast,api],
   components: {
     BaseGrid,
     BasePagination,
@@ -113,7 +114,6 @@ export default {
     };
   },
   async created() {
-    // await this.getAllEmployee();
     await this.getDepartment();
     this.department = this.$store.state.department;
   },
@@ -130,7 +130,7 @@ export default {
         }
       });
       codeMax++;
-      return "MF"+codeMax;
+      return MESSAGE.PREFIX_EMPLOYEECODE+codeMax;
     },
     /**
      * Hàm để show Form Thông tin nhân viên trống
@@ -154,14 +154,14 @@ export default {
      */
     confirmPopup() {
       this.isShowPopup = false;
-      if (this.$store.state.statusPopup == "DELETE") {
+      if (this.$store.state.statusPopup == MESSAGE.STATUS_POPUP_DELETE) {
         this.deleteEmployee(this.employeeDetail.EmployeeId);
         this.employeeDetail = {};
-      } else if (this.$store.state.statusPopup == "CLOSE") {
+      } else if (this.$store.state.statusPopup == MESSAGE.STATUS_POPUP_CLOSE) {
         this.$refs.formdetail.btnSaveOnClick();
       } else if (
-        this.$store.state.statusPopup == "ERROR" ||
-        this.$store.state.statusPopup == "EXIST"
+        this.$store.state.statusPopup == MESSAGE.STATUS_POPUP_ERROR ||
+        this.$store.state.statusPopup == MESSAGE.STATUS_POPUP_EXIST
       ) {
         this.$store.state.componentError[0].$refs.refinput.focus();
         return;
@@ -186,10 +186,10 @@ export default {
      * Created By: NTTan  (17/8/2021)
      */
     showPopupCloseForm() {
-      this.$store.state.statusPopup = "CLOSE";
-      this.dataPopup.classIcon = `icon-question`;
-      this.dataPopup.title = `Dữ liệu đã bị thay đổi. Bạn có muốn cất không?`;
-      this.dataPopup.buttonConfirm = `Có`;
+      this.$store.state.statusPopup = MESSAGE.STATUS_POPUP_CLOSE;
+      this.dataPopup.classIcon = MESSAGE.ICON_POPUP_QUESTION;
+      this.dataPopup.title = MESSAGE.TITLE_CLOSEFORM;
+      this.dataPopup.buttonConfirm = MESSAGE.CONFIRM_CLOSE_DELETE;
       this.isShowPopup = true;
     },
     /**
@@ -197,12 +197,16 @@ export default {
      * Created By: NTTan (19/8/2021)
      */
     showPopupDelete(employee) {
-      this.$store.state.statusPopup = "DELETE";
-      this.dataPopup.classIcon = `icon-warning`;
-      this.dataPopup.title = `Bạn có thực sự muốn xóa Nhân viên <${employee.EmployeeCode}> không?`;
-      this.dataPopup.buttonConfirm = `Có`;
+      this.$store.state.statusPopup = MESSAGE.STATUS_POPUP_DELETE;
+      this.dataPopup.classIcon = MESSAGE.ICON_POPUP_WARNING;
+      this.dataPopup.title = MESSAGE.TITLE_PRE_DELETE +`${employee.EmployeeCode}`+MESSAGE.TITLE_LAST_DELETE;
+      this.dataPopup.buttonConfirm = MESSAGE.CONFIRM_CLOSE_DELETE;
       this.isShowPopup = true;
     },
+    /**
+     * Hàm xử lí nhân bản
+     * Created By: NTTan (20/8/2021)
+     */
     async duplicateEmployee(employee) {
       this.employeeDetail = { ...employee };
       this.employeeDetail.EmployeeId = "";
@@ -262,10 +266,10 @@ export default {
      * Created By: NTTan(18/8/2021)
      */
     showPopupError(errorMessage) {
-      this.$store.state.statusPopup = "ERROR";
-      this.dataPopup.classIcon = `icon-error`;
+      this.$store.state.statusPopup = MESSAGE.STATUS_POPUP_ERROR;
+      this.dataPopup.classIcon = MESSAGE.ICON_POPUP_ERROR;
       this.dataPopup.title = errorMessage;
-      this.dataPopup.buttonConfirm = `Đóng`;
+      this.dataPopup.buttonConfirm = MESSAGE.CONFIRM_ERROR;
       this.isShowPopup = true;
     },
     /**
@@ -273,10 +277,10 @@ export default {
      * Created By: NTTan(18/8/2021)
      */
     showPopupErrorExist(employee) {
-      this.$store.state.statusPopup = "EXIST";
-      this.dataPopup.classIcon = `icon-warning`;
-      this.dataPopup.title = `Mã nhân viên <${employee.EmployeeCode}> đã tồn tại trong hệ thống, vui lòng kiểm tra lại.`;
-      this.dataPopup.buttonConfirm = `Đồng ý`;
+      this.$store.state.statusPopup = MESSAGE.STATUS_POPUP_EXIST;
+      this.dataPopup.classIcon = MESSAGE.ICON_POPUP_WARNING;
+      this.dataPopup.title = MESSAGE.TITLE_PRE_EXIST+`${employee.EmployeeCode}`+MESSAGE.TITLE_LAST_EXIST;
+      this.dataPopup.buttonConfirm = MESSAGE.CONFIRM_EXIST;
       this.isShowPopup = true;
     },
     /**

@@ -1,0 +1,22 @@
+export const MESSAGE = {
+    VALIDATE_EXIST:"Mã nhân viên đã tồn tại.",
+    VALIDATE_EMPTY:" không được để trống.",
+    TITLE_CLOSEFORM:"Dữ liệu đã bị thay đổi. Bạn có muốn cất không?",
+    TITLE_PRE_DELETE:"Bạn có thực sự muốn xóa Nhân viên <",
+    TITLE_LAST_DELETE:"> không?",
+    TITLE_PRE_EXIST:"Mã nhân viên <",
+    TITLE_LAST_EXIST:"> đã tồn tại trong hệ thống, vui lòng kiểm tra lại.",
+    CONFIRM_CLOSE_DELETE:"Có",
+    CONFIRM_ERROR:"Đóng",
+    CONFIRM_EXIST:"Đồng ý",
+    STATUS_POPUP_DELETE:"DELETE",
+    STATUS_POPUP_CLOSE:"CLOSE",
+    STATUS_POPUP_ERROR:"ERROR",
+    STATUS_POPUP_EXIST:"EXIST",
+    ICON_POPUP_QUESTION:"icon-question",
+    ICON_POPUP_WARNING:"icon-warning",
+    ICON_POPUP_ERROR:"icon-error",
+    PREFIX_EMPLOYEECODE:"MF",
+    ERROR_VALUE_CBB:"Vui lòng chọn đúng các Option ở trên",
+
+}

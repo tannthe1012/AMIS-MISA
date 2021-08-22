@@ -78,7 +78,7 @@ export default {
     },
     updatePageSize(pageSize) {
       this.$store.state.Pagination.pageSize = pageSize;
-       this.currentPage = 1;
+      this.currentPage = 1;
       this.$store.state.Pagination.currentPage = 1;
       this.renderList(1);
       this.getAllEmployee();

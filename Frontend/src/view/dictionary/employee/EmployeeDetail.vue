@@ -209,10 +209,11 @@ import BaseCheckBox from "../../../components/base/BaseCheckBox.vue";
 import BaseInput from "../../../components/base/BaseInput.vue";
 import BaseRadio from "../../../components/base/BaseRadio.vue";
 import BaseComboBox from "../../../components/base/BaseComboBox.vue";
-import { api } from "../../../mixins/api";
+import {MESSAGE} from "../../../resource/index"
+import { api } from "../../../mixins/api"
 export default {
   name: "EmployeeDetail",
-  mixins: [api],
+  mixins:[api],
   components: {
     BaseCheckBox,
     BaseInput,
@@ -374,7 +375,7 @@ export default {
             Object.entries(this.$refs)[0][1]
           );
           Object.entries(this.$refs)[0][1].$refs.refinput.title =
-            "Mã nhân viên đã tồn tại";
+            MESSAGE.VALIDATE_EXIST;
           this.$emit("showPopupErrorExist", this.currentEmployee);
           return;
         }
@@ -415,7 +416,7 @@ export default {
             Object.entries(this.$refs)[0][1]
           );
           Object.entries(this.$refs)[0][1].$refs.refinput.title =
-            "Mã nhân viên đã tồn tại";
+            MESSAGE.VALIDATE_EXIST;
           this.$emit("showPopupErrorExist", this.currentEmployee);
           return;
         }
@@ -443,7 +444,7 @@ export default {
      * Created By: NTTan(20/8/2021)
      */
     createdNewCode(oldCode) {
-      return "MF"+(Number(oldCode.slice(2))+1);
+      return MESSAGE.PREFIX_EMPLOYEECODE+(Number(oldCode.slice(2))+1);
     },
     /**
      * Hàm xử lí nút Hủy trong form chi tiết nhân viên

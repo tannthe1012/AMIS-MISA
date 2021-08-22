@@ -32,6 +32,7 @@
   </div>
 </template>
 <script>
+import {MESSAGE} from "../../resource/index"
 export default {
   name: "BaseComboBox",
   props: {
@@ -186,12 +187,12 @@ export default {
       }
       if (!value) {
         this.error = true;
-        this.$refs.refinput.title = `${this.label} không được phép bỏ trống`;
+        this.$refs.refinput.title = `${this.label}`+MESSAGE.VALIDATE_EMPTY;
       } else {
         var obj = this.items.filter((item) => item.name == value);
         if (obj.length == 0) {
           this.error = true;
-          this.$refs.refinput.title = "Vui lòng chọn đúng các Option ở trên";
+          this.$refs.refinput.title = MESSAGE.ERROR_VALUE_CBB;
         } else {
           this.error = false;
           this.$refs.refinput.title = "";

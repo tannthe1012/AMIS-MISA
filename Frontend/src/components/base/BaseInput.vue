@@ -18,6 +18,7 @@
   </div>
 </template>
 <script>
+import { MESSAGE } from '../../resource/index'
 export default {
   data() {
     return {
@@ -67,20 +68,10 @@ export default {
       }
       if (!value || value == null) {
         this.error = true;
-        this.$refs.refinput.title = `${this.label} không được phép bỏ trống`;
+        this.$refs.refinput.title = `${this.label}`+MESSAGE.VALIDATE_EMPTY;
       } else {
         this.$refs.refinput.title = "";
         this.error = false;
-      }
-      
-      if (this.label == "Email" && value != "") {
-        if (!this.regexEmail.test(value)) {
-          this.error = true;
-          this.$refs.refinput.title = "Email không đúng định dạng";
-        } else {
-          this.$refs.refinput.title = "";
-          this.error = false;
-        }
       }
     },
   },
