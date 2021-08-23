@@ -26,7 +26,7 @@
         @showPopupDelete="showPopupDelete"
         @duplicateEmployee="duplicateEmployee"
       />
-      <BasePagination />
+      <BasePagination @getEmployees="getEmployees"/>
       <EmployeeDetail
         v-if="isShowFormDetail"
         v-bind:department="department"
@@ -64,12 +64,14 @@ import EmployeeDetail from "./EmployeeDetail.vue";
 import BasePopup from "../../../components/base/BasePopup.vue";
 import BaseToast from "../../../components/base/BaseToast.vue";
 import BaseLoading from "../../../components/base/BaseLoading.vue";
-import {MESSAGE} from "../../../resource/index"
+import { MESSAGE } from "../../../resource/index";
 import { toast } from "../../../mixins/mixin.js";
-import { api } from "../../../mixins/api.js";
+// import { api } from "../../../mixins/api.js";
+import employeeApi from "../../../api/components/EmployeeAPI";
+import departmentApi from "../../../api/components/DepartmentAPI";
 export default {
   name: "EmployeePage",
-  mixins: [toast,api],
+  mixins: [toast],
   components: {
     BaseGrid,
     BasePagination,
@@ -114,6 +116,7 @@ export default {
     };
   },
   async created() {
+    await this.getEmployees();
     await this.getDepartment();
     this.department = this.$store.state.department;
   },
@@ -124,13 +127,13 @@ export default {
      */
     createdNewCode() {
       var codeMax = 0;
-      this.$store.state.employeeList.forEach(function(item){
-        if(Number(item.EmployeeCode.slice(2)) > codeMax) {
+      this.$store.state.employeeList.forEach(function (item) {
+        if (Number(item.EmployeeCode.slice(2)) > codeMax) {
           codeMax = Number(item.EmployeeCode.slice(2));
         }
       });
       codeMax++;
-      return MESSAGE.PREFIX_EMPLOYEECODE+codeMax;
+      return MESSAGE.PREFIX_EMPLOYEECODE + codeMax;
     },
     /**
      * Hàm để show Form Thông tin nhân viên trống
@@ -155,7 +158,7 @@ export default {
     confirmPopup() {
       this.isShowPopup = false;
       if (this.$store.state.statusPopup == MESSAGE.STATUS_POPUP_DELETE) {
-        this.deleteEmployee(this.employeeDetail.EmployeeId);
+        this.deleteEmployee(this.employeeDetail);
         this.employeeDetail = {};
       } else if (this.$store.state.statusPopup == MESSAGE.STATUS_POPUP_CLOSE) {
         this.$refs.formdetail.btnSaveOnClick();
@@ -199,7 +202,10 @@ export default {
     showPopupDelete(employee) {
       this.$store.state.statusPopup = MESSAGE.STATUS_POPUP_DELETE;
       this.dataPopup.classIcon = MESSAGE.ICON_POPUP_WARNING;
-      this.dataPopup.title = MESSAGE.TITLE_PRE_DELETE +`${employee.EmployeeCode}`+MESSAGE.TITLE_LAST_DELETE;
+      this.dataPopup.title =
+        MESSAGE.TITLE_PRE_DELETE +
+        `${employee.EmployeeCode}` +
+        MESSAGE.TITLE_LAST_DELETE;
       this.dataPopup.buttonConfirm = MESSAGE.CONFIRM_CLOSE_DELETE;
       this.isShowPopup = true;
     },
@@ -251,7 +257,7 @@ export default {
      * Created By: NTTan (19/8/2021)
      */
     refreshData() {
-      this.getAllEmployee();
+      this.getEmployees();
     },
     /**
      * Xử lý sự kiện close Form và Popup
@@ -279,7 +285,10 @@ export default {
     showPopupErrorExist(employee) {
       this.$store.state.statusPopup = MESSAGE.STATUS_POPUP_EXIST;
       this.dataPopup.classIcon = MESSAGE.ICON_POPUP_WARNING;
-      this.dataPopup.title = MESSAGE.TITLE_PRE_EXIST+`${employee.EmployeeCode}`+MESSAGE.TITLE_LAST_EXIST;
+      this.dataPopup.title =
+        MESSAGE.TITLE_PRE_EXIST +
+        `${employee.EmployeeCode}` +
+        MESSAGE.TITLE_LAST_EXIST;
       this.dataPopup.buttonConfirm = MESSAGE.CONFIRM_EXIST;
       this.isShowPopup = true;
     },
@@ -296,7 +305,99 @@ export default {
      */
     searchEmployee() {
       this.$store.state.Pagination.employeeFilter = this.employeeFilter;
-      this.getAllEmployee();
+      this.getEmployees();
+    },
+    /**
+     * Hàm lấy dữ liệu của table
+     * Created By:  NTTan (17/8/2021)
+     */
+    getDepartment() {
+      departmentApi
+        .getAllEntities()
+        .then((response) => {
+          response.data.forEach((element) => {
+            this.department.push({
+              id: element.DepartmentId,
+              name: element.DepartmentName,
+            });
+          });
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    },
+    /**
+     * Hàm lấy dữ liệu của table
+     * Created By:  NTTan (17/8/2021)
+     */
+    getEmployees() {
+      this.$store.state.isShowLoading = true;
+      this.$store.state.employeeList = [];
+      let pageSize = this.$store.state.Pagination.pageSize;
+      let pageindex = this.$store.state.Pagination.currentPage;
+      let employeeFilter = this.$store.state.Pagination.employeeFilter;
+      employeeApi
+        .getEmployeesFilterPaging(pageSize, pageindex, employeeFilter)
+        .then((response) => {
+          this.$store.state.employeeList = response.data.Data;
+          this.$store.state.Pagination.totalPage = response.data.TotalPage;
+          this.$store.state.Pagination.totalRecord = response.data.TotalRecord;
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+      this.$store.state.isShowLoading = false;
+    },
+    /**
+     * Hàm thêm mới dữ liệu của table
+     * Created By:  NTTan (17/8/2021)
+     */
+    postEmployee(employee) {
+      this.$store.state.employeeList = [];
+      employeeApi
+        .postEntity(employee)
+        .then(() => {
+          this.getEmployees();
+          this.addToast(MESSAGE.SUCCESS_TOAST, MESSAGE.INSERT_SUCCESS);
+        })
+        .catch(function (error) {
+          this.addToast(MESSAGE.ERROR_TOAST, MESSAGE.INSERT_FAIL);
+          console.log(error);
+        });
+    },
+    /**
+     * Hàm update dữ liệu của table
+     * Created By:  NTTan (17/8/2021)
+     */
+    putEmployee(employee) {
+      this.$store.state.employeeList = [];
+      employeeApi
+        .putEntity(employee.EmployeeId, employee)
+        .then(() => {
+          this.getEmployees();
+          this.addToast(MESSAGE.SUCCESS_TOAST, MESSAGE.UPDATE_SUCCESS);
+        })
+        .catch(function (error) {
+          this.addToast(MESSAGE.ERROR_TOAST, MESSAGE.UPDATE_FAIL);
+          console.log(error);
+        });
+    },
+    /**
+     * Hàm xóa dữ liệu của table
+     * Created By:  NTTan (17/8/2021)
+     */
+    deleteEmployee(employee) {
+      this.$store.state.employeeList = [];
+      employeeApi
+        .deleteEntity(employee.EmployeeId)
+        .then(() => {
+          this.getEmployees();
+          this.addToast(MESSAGE.SUCCESS_TOAST, MESSAGE.DELETE_SUCCESS);
+        })
+        .catch(function (error) {
+          this.addToast(MESSAGE.ERROR_TOAST, MESSAGE.DELETE_FAIL);
+          console.log(error);
+        });
     },
   },
 };

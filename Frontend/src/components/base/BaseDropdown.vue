@@ -43,8 +43,8 @@ export default {
       error: false,
       errorMessage: "",
       isShowOption: false,
-      valueSelect: "10 bản ghi trên 1 trang",
-      inputValue: "10 bản ghi trên 1 trang",
+      valueSelect: "20 bản ghi trên 1 trang",
+      inputValue: "20 bản ghi trên 1 trang",
       results: [],
       arrowCounter: 1,
       items: [
