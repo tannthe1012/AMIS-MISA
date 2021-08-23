@@ -7,6 +7,7 @@
     <!-- <br /> -->
     <input
       :type="type"
+      :tabindex="tabindex"
       :class="[
         { 'error-input': error == true },
       ]"
@@ -40,6 +41,7 @@ export default {
       type: String,
       default: "text",
     },
+    tabindex: String,
   },
   watch: {
     value: function() {

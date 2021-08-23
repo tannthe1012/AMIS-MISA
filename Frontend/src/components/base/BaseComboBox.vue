@@ -3,6 +3,7 @@
     <div class="cbx-show" :class="{ 'error-combobox': error == true }">
       <input
         type="text"
+        :tabindex="tabindex"
         @blur="validateCombobox(inputValue)"
         @input="onChange"
         @keydown.down="onArrowDown"
@@ -44,6 +45,7 @@ export default {
     valueInput: { type: String },
     optionAll: { type: Object },
     label: String,
+    tabindex:String,
   },
 
   data() {

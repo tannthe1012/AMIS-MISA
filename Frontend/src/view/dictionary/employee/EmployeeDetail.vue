@@ -31,6 +31,7 @@
                         ref="input1"
                         label="Mã"
                         :required="true"
+                        tabindex="1"
                       />
                     </div>
                   </div>
@@ -40,6 +41,7 @@
                       ref="input2"
                       label="Tên"
                       :required="true"
+                      tabindex="2"
                     />
                   </div>
                 </div>
@@ -56,6 +58,7 @@
                     v-bind:item="department"
                     v-bind:valueInput="currentEmployee.DepartmentName"
                     @result="(result) => fotmatDataCbb(result, 'department')"
+                    tabindex="3"
                   />
                 </div>
                 <div class="form-row">
@@ -63,6 +66,7 @@
                     v-model="currentEmployee.EmployeePosition"
                     ref="input4"
                     label="Chức danh"
+                    tabindex="4"
                   />
                 </div>
               </div>
@@ -71,11 +75,19 @@
               <div class="form-row">
                 <div class="w-2/5">
                   <div class="p-r-6">
-                    <BaseInput
+                    <!-- <BaseInput
                       v-model="currentEmployee.DateOfBirth"
                       label="Ngày sinh"
                       ref="input5"
                       type="date"
+                      tabindex="5"
+                    /> -->
+                    <BaseDatePicker
+                      v-model="currentEmployee.DateOfBirth"
+                      label="Ngày sinh"
+                      
+                      type="date"
+                      tabindex="5"
                     />
                   </div>
                 </div>
@@ -85,25 +97,35 @@
                     :items="gender"
                     @resultRadio="formatDataGender"
                     label="Giới tính"
+                    tabindex="6"
                   />
                 </div>
               </div>
-              <div class="form-row">
+              <div class="form-row" style="margin-top:12px">
                 <div class="w-3/5">
                   <div class="p-r-6">
                     <BaseInput
                       v-model="currentEmployee.IdentityNumber"
                       ref="input7"
                       label="Số CMND"
+                      tabindex="7"
                     />
                   </div>
                 </div>
                 <div class="w-2/5">
-                  <BaseInput
+                  <!-- <BaseInput
                     v-model="currentEmployee.IdentityDate"
                     ref="input8"
                     label="Ngày cấp"
                     type="date"
+                    tabindex="8"
+                  /> -->
+                  <BaseDatePicker
+                    v-model="currentEmployee.IdentityDate"
+                   
+                    label="Ngày cấp"
+                    type="date"
+                    tabindex="8"
                   />
                 </div>
               </div>
@@ -112,6 +134,7 @@
                   v-model="currentEmployee.IdentityPlace"
                   label="Nơi cấp"
                   ref="input9"
+                  tabindex="9"
                 />
               </div>
             </div>
@@ -122,6 +145,7 @@
                 v-model="currentEmployee.Address"
                 ref="input10"
                 label="Địa chỉ"
+                tabindex="10"
               />
             </div>
             <div class="form-row" style="justify-content: end">
@@ -131,6 +155,7 @@
                     v-model="currentEmployee.PhoneNumber"
                     label="ĐT di động"
                     ref="input11"
+                    tabindex="11"
                   />
                 </div>
               </div>
@@ -140,6 +165,7 @@
                     v-model="currentEmployee.TelephoneNumber"
                     label="ĐT cố định"
                     ref="input12"
+                    tabindex="12"
                   />
                 </div>
               </div>
@@ -150,6 +176,7 @@
                     label="Email"
                     type="email"
                     ref="input13"
+                    tabindex="13"
                   />
                 </div>
               </div>
@@ -161,6 +188,7 @@
                     v-model="currentEmployee.BankAccountNumber"
                     label="Tài khoản ngân hàng"
                     ref="input14"
+                    tabindex="14"
                   />
                 </div>
               </div>
@@ -170,6 +198,7 @@
                     v-model="currentEmployee.BankName"
                     label="Tên ngân hàng"
                     ref="input15"
+                    tabindex="15"
                   />
                 </div>
               </div>
@@ -179,6 +208,7 @@
                     v-model="currentEmployee.BankBranchName"
                     label="Chi nhánh"
                     ref="input16"
+                    tabindex="16"
                   />
                 </div>
               </div>
@@ -189,11 +219,19 @@
           <div class="divide"></div>
           <div class="form-footer">
             <div class="form-footer-left">
-              <button class="m-btn-default" @click="closeForm">Hủy</button>
+              <button class="m-btn-default" tabindex="17" @click="closeForm">
+                Hủy
+              </button>
             </div>
             <div class="form-footer-right">
-              <button class="m-btn-default" @click="btnSaveOnClick">Cất</button>
-              <button class="m-btn" @click="btnSaveAndShowForm">
+              <button
+                class="m-btn-default"
+                tabindex="18"
+                @click="btnSaveOnClick"
+              >
+                Cất
+              </button>
+              <button class="m-btn" tabindex="19" @click="btnSaveAndShowForm">
                 Cất và Thêm
               </button>
             </div>
@@ -209,16 +247,18 @@ import BaseCheckBox from "../../../components/base/BaseCheckBox.vue";
 import BaseInput from "../../../components/base/BaseInput.vue";
 import BaseRadio from "../../../components/base/BaseRadio.vue";
 import BaseComboBox from "../../../components/base/BaseComboBox.vue";
-import {MESSAGE} from "../../../resource/index"
-import { api } from "../../../mixins/api"
+import BaseDatePicker from "../../../components/base/BaseDatePicker.vue";
+import { MESSAGE } from "../../../resource/index";
+import { api } from "../../../mixins/api";
 export default {
   name: "EmployeeDetail",
-  mixins:[api],
+  mixins: [api],
   components: {
     BaseCheckBox,
     BaseInput,
     BaseRadio,
     BaseComboBox,
+    BaseDatePicker,
   },
   props: {
     EmployeeDetail: { type: Object },
@@ -425,13 +465,16 @@ export default {
         this.$emit("saveAndShowForm", this.currentEmployee);
         // reset form
         this.currentEmployee.Gender = 0;
+        this.currentEmployee.DateOfBirth = null;
+        
         let newCode = this.createdNewCode(this.currentEmployee.EmployeeCode);
         this.employeeDetail = this.emloyeeDefault;
         this.employeeDetail.EmployeeCode = newCode;
-         
+
         Object.entries(this.$refs).forEach((baseinput) => {
           baseinput[1].$refs.refinput.value = "";
         });
+
         this.focusInputFrist();
       } else {
         var errorContext =
@@ -439,12 +482,12 @@ export default {
         this.$emit("showPopupError", errorContext);
       }
     },
-     /**
+    /**
      * Hàm sinh mã mới + 1
      * Created By: NTTan(20/8/2021)
      */
     createdNewCode(oldCode) {
-      return MESSAGE.PREFIX_EMPLOYEECODE+(Number(oldCode.slice(2))+1);
+      return MESSAGE.PREFIX_EMPLOYEECODE + (Number(oldCode.slice(2)) + 1);
     },
     /**
      * Hàm xử lí nút Hủy trong form chi tiết nhân viên

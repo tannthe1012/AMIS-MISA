@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace MISA.ApplicationCore.Interface
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public interface IDepartmentRepository:IBaseRepository<Department>
     {
        

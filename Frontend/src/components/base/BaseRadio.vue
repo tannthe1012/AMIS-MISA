@@ -7,7 +7,7 @@
       :key="index"
       >
       {{item.name}}
-        <input type="radio" :value="item.id" :checked="valueSelect == item.id" name="radio" @input="updateValue($event.target.value)" />
+        <input type="radio" :tabindex="tabindex" :value="item.id" :checked="valueSelect == item.id" name="radio" @input="updateValue($event.target.value)" />
         <span class="checkmark"></span>
       </label>
     </div>
@@ -20,6 +20,7 @@ export default {
     value: {
       type:Number,
     },
+    tabindex:String,
     label: String,
     type: {
       type: String,
