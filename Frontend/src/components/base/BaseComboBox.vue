@@ -2,6 +2,7 @@
   <div class="cbx">
     <div class="cbx-show" :class="{ 'error-combobox': error == true }">
       <input
+        class="outline-none"
         type="text"
         :tabindex="tabindex"
         @blur="validateCombobox(inputValue)"
@@ -13,7 +14,7 @@
         ref="refinput"
       />
       <div class="combo-action" @click="iconOnClick">
-            <div class="mi-icon-16 icon-combo"></div>
+        <div class="mi-icon-16 icon-combo"></div>
       </div>
     </div>
     <div class="cbx-hide" v-show="isShowOption">
@@ -33,7 +34,7 @@
   </div>
 </template>
 <script>
-import {MESSAGE} from "../../resource/index"
+import { MESSAGE } from "../../resource/index";
 export default {
   name: "BaseComboBox",
   props: {
@@ -45,7 +46,7 @@ export default {
     valueInput: { type: String },
     optionAll: { type: Object },
     label: String,
-    tabindex:String,
+    tabindex: String,
   },
 
   data() {
@@ -98,7 +99,7 @@ export default {
       this.isShowOption = false;
       this.inputValue = `${item.name}`;
       this.valueSelect = this.inputValue;
-      this.$refs.refinput.focus()
+      this.$refs.refinput.focus();
     },
     /**
      * Gán class active vào option được chọn
@@ -189,7 +190,7 @@ export default {
       }
       if (!value) {
         this.error = true;
-        this.$refs.refinput.title = `${this.label}`+MESSAGE.VALIDATE_EMPTY;
+        this.$refs.refinput.title = `${this.label}` + MESSAGE.VALIDATE_EMPTY;
       } else {
         var obj = this.items.filter((item) => item.name == value);
         if (obj.length == 0) {
@@ -206,4 +207,7 @@ export default {
 </script>
 <style scoped>
 @import "../../css/common/combobox.css";
+input:hover {
+  outline: none;
+}
 </style>

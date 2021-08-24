@@ -15,6 +15,7 @@
             placeholder="Tìm theo mã, tên nhân viên"
             value=""
             @input="updateEmployeeFilter($event.target.value)"
+            @keydown.enter="searchEmployee"
           />
           <div class="mi-icon-16 icon-search" @click="searchEmployee"></div>
         </div>
@@ -26,7 +27,7 @@
         @showPopupDelete="showPopupDelete"
         @duplicateEmployee="duplicateEmployee"
       />
-      <BasePagination @getEmployees="getEmployees"/>
+      <BasePagination @getEmployees="getEmployees" />
       <EmployeeDetail
         v-if="isShowFormDetail"
         v-bind:department="department"
@@ -58,20 +59,18 @@
   </div>
 </template>
 <script>
+import { v4 as uuidv4 } from "uuid";
 import BaseGrid from "../../../components/base/BaseGrid.vue";
 import BasePagination from "../../../components/base/BasePagination.vue";
 import EmployeeDetail from "./EmployeeDetail.vue";
 import BasePopup from "../../../components/base/BasePopup.vue";
 import BaseToast from "../../../components/base/BaseToast.vue";
 import BaseLoading from "../../../components/base/BaseLoading.vue";
-import { MESSAGE } from "../../../resource/index";
-import { toast } from "../../../mixins/mixin.js";
-// import { api } from "../../../mixins/api.js";
+import { iconToast, MESSAGE } from "../../../resource/index";
 import employeeApi from "../../../api/components/EmployeeAPI";
 import departmentApi from "../../../api/components/DepartmentAPI";
 export default {
   name: "EmployeePage",
-  mixins: [toast],
   components: {
     BaseGrid,
     BasePagination,
@@ -118,7 +117,6 @@ export default {
   async created() {
     await this.getEmployees();
     await this.getDepartment();
-    this.department = this.$store.state.department;
   },
   methods: {
     /**
@@ -244,12 +242,12 @@ export default {
      * Post and Put và reset form
      * Created By: NTTan(17/8/2021)
      */
-    async saveAndShowForm(employee) {
+     saveAndShowForm(employee) {
       if (employee.EmployeeId == "" || employee.EmployeeId == null) {
         delete employee.EmployeeId;
-        await this.postEmployee(employee);
+        this.postEmployee(employee);
       } else {
-        await this.putEmployee(employee);
+        this.putEmployee(employee);
       }
     },
     /**
@@ -327,7 +325,7 @@ export default {
         });
     },
     /**
-     * Hàm lấy dữ liệu của table
+     * Hàm lấy dữ liệu từ server
      * Created By:  NTTan (17/8/2021)
      */
     getEmployees() {
@@ -349,7 +347,7 @@ export default {
       this.$store.state.isShowLoading = false;
     },
     /**
-     * Hàm thêm mới dữ liệu của table
+     * Hàm thêm mới dữ liệu
      * Created By:  NTTan (17/8/2021)
      */
     postEmployee(employee) {
@@ -366,7 +364,7 @@ export default {
         });
     },
     /**
-     * Hàm update dữ liệu của table
+     * Hàm update dữ liệu
      * Created By:  NTTan (17/8/2021)
      */
     putEmployee(employee) {
@@ -383,7 +381,7 @@ export default {
         });
     },
     /**
-     * Hàm xóa dữ liệu của table
+     * Hàm xóa dữ liệu
      * Created By:  NTTan (17/8/2021)
      */
     deleteEmployee(employee) {
@@ -398,6 +396,20 @@ export default {
           this.addToast(MESSAGE.ERROR_TOAST, MESSAGE.DELETE_FAIL);
           console.log(error);
         });
+    },
+    /**
+     * Hàm thêm Toast vào mảng để xuất hiện
+     * Created By: NTTan (20/8/2021)
+     */
+    addToast(type, message) {
+      var a = {
+        id: uuidv4(),
+        icontoast: iconToast[type],
+        classtoast: `toast-${type}`,
+        type: type,
+        message: message,
+      };
+      this.$store.state.Toast.push(a);
     },
   },
 };

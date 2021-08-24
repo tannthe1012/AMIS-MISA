@@ -79,8 +79,6 @@
 </template>
 <script>
 import BaseDropdown from "./BaseDropdown.vue";
-// import { api } from "../../mixins/api";
-// import employeeApi from "../../api/components/EmployeeAPI";
 export default {
   name: "BasePagination",
   components: {
@@ -101,28 +99,6 @@ export default {
       this.renderList(1);
   },
   methods: {
-    // /**
-    //  * Hàm lấy dữ liệu của table
-    //  * Created By:  NTTan (17/8/2021)
-    //  */
-    // getEmployees() {
-    //   this.$store.state.isShowLoading = true;
-    //   this.$store.state.employeeList = [];
-    //   let pageSize = this.$store.state.Pagination.pageSize;
-    //   let pageindex = this.$store.state.Pagination.currentPage;
-    //   let employeeFilter = this.$store.state.Pagination.employeeFilter;
-    //   employeeApi
-    //     .getEmployeesFilterPaging(pageSize, pageindex, employeeFilter)
-    //     .then((response) => {
-    //       this.$store.state.employeeList = response.data.Data;
-    //       this.$store.state.Pagination.totalPage = response.data.TotalPage;
-    //       this.$store.state.Pagination.totalRecord = response.data.TotalRecord;
-    //     })
-    //     .catch(function (error) {
-    //       console.log(error);
-    //     });
-    //   this.$store.state.isShowLoading = false;
-    // },
     /**
      * render các list div number page
      * param(number): current page

@@ -34,10 +34,8 @@
   </div>
 </template>
 <script>
-import { api } from "../../mixins/api";
 export default {
   name: "BaseDropdown",
-  mixins: [api],
   data() {
     return {
       error: false,

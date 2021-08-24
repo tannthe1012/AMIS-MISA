@@ -10,7 +10,7 @@ class EmployeeAPI extends BaseAPI {
     this.controller = "api/v1/Employees";
     this.newEmployeeCodeAPI = "NewEmployeeCode";
     this.employeeFilterAPI = "Filter";
-    this.checkEmployeeCode = "NewEmployeeCode";
+    this.checkEmployeeCode = "CheckCodeExist";
   }
 
   /**

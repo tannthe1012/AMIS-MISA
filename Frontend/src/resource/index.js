@@ -26,4 +26,10 @@ export const MESSAGE = {
     INSERT_FAIL:"Bạn đã thêm mới bản ghi thành công",
     SUCCESS_TOAST:"success",
     ERROR_TOAST:"error",
+    CODE_EXIST:"Mã nhân viên đã tồn tại. Mời bạn nhập lại",
+}
+export const iconToast = {
+        success: 'fas fa-check-circle',
+        error: 'fas fa-exclamation-triangle',
+        warning: 'fas fa-exclamation-circle',
 }

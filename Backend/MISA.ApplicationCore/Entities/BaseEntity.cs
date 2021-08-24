@@ -25,11 +25,15 @@ namespace MISA.ApplicationCore.Entities
     [AttributeUsage(AttributeTargets.Property)]
     public class MaxLength:Attribute
     {
+        #region property
         public int Value { get; set; }
+        #endregion
+        #region constructor
         public MaxLength(int length)
         {
             Value = length;  
         }
+        #endregion
     }
     public class BaseEntity
     {

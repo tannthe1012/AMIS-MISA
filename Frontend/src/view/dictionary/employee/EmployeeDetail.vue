@@ -85,7 +85,6 @@
                     <BaseDatePicker
                       v-model="currentEmployee.DateOfBirth"
                       label="Ngày sinh"
-                      
                       type="date"
                       tabindex="5"
                     />
@@ -101,7 +100,7 @@
                   />
                 </div>
               </div>
-              <div class="form-row" style="margin-top:12px">
+              <div class="form-row" style="margin-top: 12px">
                 <div class="w-3/5">
                   <div class="p-r-6">
                     <BaseInput
@@ -122,7 +121,6 @@
                   /> -->
                   <BaseDatePicker
                     v-model="currentEmployee.IdentityDate"
-                   
                     label="Ngày cấp"
                     type="date"
                     tabindex="8"
@@ -249,10 +247,9 @@ import BaseRadio from "../../../components/base/BaseRadio.vue";
 import BaseComboBox from "../../../components/base/BaseComboBox.vue";
 import BaseDatePicker from "../../../components/base/BaseDatePicker.vue";
 import { MESSAGE } from "../../../resource/index";
-import { api } from "../../../mixins/api";
+import employeeApi from "../../../api/components/EmployeeAPI";
 export default {
   name: "EmployeeDetail",
-  mixins: [api],
   components: {
     BaseCheckBox,
     BaseInput,
@@ -466,7 +463,6 @@ export default {
         // reset form
         this.currentEmployee.Gender = 0;
         this.currentEmployee.DateOfBirth = null;
-        
         let newCode = this.createdNewCode(this.currentEmployee.EmployeeCode);
         this.employeeDetail = this.emloyeeDefault;
         this.employeeDetail.EmployeeCode = newCode;
@@ -495,6 +491,20 @@ export default {
      */
     closeForm() {
       this.$emit("closeForm");
+    },
+    /**
+     * Hàm lấy dữ liệu của table
+     * Created By:  NTTan (17/8/2021)
+     */
+    async checkEmployeeCodeExist(employeeCode) {
+      let isExist;
+      try {
+        let res = await employeeApi.checkEmployeeCodeExist(employeeCode);
+        isExist = res.data;
+      } catch (e) {
+        console.log(e);
+      }
+      return isExist;
     },
   },
 };

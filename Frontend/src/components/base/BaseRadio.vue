@@ -2,12 +2,20 @@
   <div class="form-input p-l-10">
     <label class="flex ms-title-input" for="name">{{ label }}</label>
     <div class="flex">
-      <label class="container m-r-20"
-      v-for="(item,index) in option"
-      :key="index"
+      <label
+        class="container m-r-20"
+        v-for="(item, index) in option"
+        :key="index"
       >
-      {{item.name}}
-        <input type="radio" :tabindex="tabindex" :value="item.id" :checked="valueSelect == item.id" name="radio" @input="updateValue($event.target.value)" />
+        {{ item.name }}
+        <input
+          type="radio"
+          :tabindex="tabindex"
+          :value="item.id"
+          :checked="valueSelect == item.id"
+          name="radio"
+          @input="updateValue($event.target.value)"
+        />
         <span class="checkmark"></span>
       </label>
     </div>
@@ -18,9 +26,9 @@ export default {
   name: "BaseRadio",
   props: {
     value: {
-      type:Number,
+      type: Number,
     },
-    tabindex:String,
+    tabindex: String,
     label: String,
     type: {
       type: String,
@@ -30,26 +38,25 @@ export default {
   },
   data() {
     return {
-      option : this.items,
+      option: this.items,
       valueSelect: this.value,
-    }
+    };
   },
   mounted() {
     this.setDefaultValue();
   },
   watch: {
-    value:function() {
+    value: function () {
       this.valueSelect = this.value;
     },
-    valueSelect:function() {
+    valueSelect: function () {
       this.$emit("resultRadio", this.valueSelect);
     },
-    
   },
   methods: {
     /**
      * Hàm updatevalue của radio
-     * param: value của input 0 1 2 
+     * param: value của input 0 1 2
      * Created By: NTTan(20/8/2021)
      */
     updateValue(value) {
@@ -63,7 +70,7 @@ export default {
       if (!this.value) {
         this.valueSelect = 0;
       }
-    }
+    },
   },
 };
 </script>
@@ -80,8 +87,8 @@ export default {
   cursor: grab;
 }
 .space-20 {
-    width: 20px;
-    height: 20px;
-    cursor: default;
+  width: 20px;
+  height: 20px;
+  cursor: default;
 }
 </style>
